@@ -1,57 +1,55 @@
 import React from "react";
+import Modal from "react-bootstrap/Modal";
+import coder from "../assets/images/Vector.png";
 
-const Popup = () => {
+const Popup = (props) => {
+  // const [close, setClose] = useState(true);
   return (
     <>
-      {/* Button trigger modal  */}
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModalCenter"
-      >
-        Launch demo modal
-      </button>
+      <div>
+        <Modal
+          {...props}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              {/* <button type="button" aria-label="Close" data-mdb-dismiss="modal">
+                close
+              </button> */}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="model_popup">
+              <div className="attendance_view">
+                <div className="tag_content">
+                  <p className="tag_data">Attendance : 04/12/2023</p>
+                </div>
+                <p className="highlight_head">👋 Hello, John</p>
+                <p className="sub_text">
+                  Scan QR code from your phone to mark attendance.
+                </p>
+                <div className="step_text">
+                  <p className="list_head">Steps to mark attendance</p>
+                  <ul>
+                    <li className="list_text">Open sportslete application</li>
+                    <li className="list_text">Tap on attendance tab</li>
+                    <li className="list_text">
+                      Scan QR code to mark attendance
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-      {/* Modal  */}
-      <div
-        className="modal fade"
-        id="exampleModalCenter"
-        tabIndex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLongTitle">
-                Modal title
-              </h5>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <div className="qr_container">
+                <div className="attendance_view">
+                  <img src={coder} width="180px" />
+                </div>
+              </div>
             </div>
-            <div className="modal-body">...</div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
-              </button>
-            </div>
-          </div>
-        </div>
+          </Modal.Body>
+        </Modal>
       </div>
     </>
   );
